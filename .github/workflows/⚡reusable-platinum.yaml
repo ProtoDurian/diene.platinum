@@ -12,7 +12,7 @@ jobs:
       - nscloud-cache-tag-nix-store-cache-ubuntu-26.04-amd64
     timeout-minutes: 30
     steps:
-      - uses: AtomiCloud/actions.setup-nix@v3
+      - uses: AtomiCloud/actions.setup-nix@v4
       - name: Run the unit tier
         run: nix develop .#ci -c ./scripts/ci/platinum.sh
 
@@ -24,7 +24,7 @@ jobs:
       - nscloud-cache-tag-nix-store-cache-ubuntu-26.04-amd64
     timeout-minutes: 30
     steps:
-      - uses: AtomiCloud/actions.setup-nix@v3
+      - uses: AtomiCloud/actions.setup-nix@v4
       - name: Install on k3d, program the Gateway, route a sample and /healthz
         run: nix develop .#ci -c ./scripts/ci/platinum-k3d.sh
 
@@ -36,6 +36,6 @@ jobs:
       - nscloud-cache-tag-nix-store-cache-ubuntu-26.04-amd64
     timeout-minutes: 30
     steps:
-      - uses: AtomiCloud/actions.setup-nix@v3
+      - uses: AtomiCloud/actions.setup-nix@v4
       - name: ENTEI dev-host overlay with fixture ListenerSet, HTTPRoute and Certificate
         run: nix develop .#ci -c ./scripts/ci/platinum-entei.sh
